@@ -1,0 +1,28 @@
+﻿body {
+    background-color: lightgray;
+}
+
+header {
+    background-color: grey;
+}
+
+div {
+    background-color: darkkhaki;
+}
+
+footer {
+    background-color: darkolivegreen
+}
+
+code {
+    font-family: Calibri;
+    font-size:x-large;
+    color: darkred;
+}
+
+table, td, th {
+    border: 1px dotted black;
+
+}
+
+

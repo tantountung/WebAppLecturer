@@ -33,11 +33,15 @@ namespace WebAppLecturer
 
             app.UseEndpoints(endpoints =>
             {
+
+                endpoints.MapControllerRoute(
+                            name: "Fever Check",
+                            pattern: "/Check",
+                            defaults: new { controller = "Doctor", action = "Check" });
+
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=About}/{id?}"
-
-                    );
+                    pattern: "{controller=Home}/{action=About}/{id?}");
                 });
             
         }

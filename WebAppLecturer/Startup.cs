@@ -16,6 +16,15 @@ namespace WebAppLecturer
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(1200);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddMvc();
         }
 
@@ -31,8 +40,14 @@ namespace WebAppLecturer
 
             app.UseRouting();
 
+            app.UseSession();
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                            name: "Guess Number",
+                            pattern: "/GuessingGame",
+                            defaults: new { controller = "Guess", action = "GuessingGame" });
 
                 endpoints.MapControllerRoute(
                             name: "Fever Check",

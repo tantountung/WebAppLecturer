@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Guess";
+}
+
+<h1>Guess a number between 1 and 100.</h1>
+
+<form asp-action="GuessingGame" asp-controller="Guess" method="post">
+
+    <input type="number" value="" name="number" placeholder="Your guess here" />
+    <button type="submit" value="angka">Send</button>
+
+</form>
+
+@if (ViewBag.Msg != null)
+{
+    <h4 style="color: red">Error: @ViewBag.Msg</h4>
+}
+else
+{
+    <h4 style="color: red">@ViewBag.message</h4>
+}
+
+

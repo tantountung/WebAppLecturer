@@ -5,6 +5,7 @@
         string message;
         int cutOff = 38;
 
+
         if (temp > cutOff)
         {
             message = "You have fever";
